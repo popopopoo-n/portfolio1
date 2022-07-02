@@ -1,0 +1,410 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    box-sizing: border-box;
+}
+
+/* typo
+------------------------------------- */
+
+html {
+    width: 100%;
+    font-size: 100%;
+    font-family: 'Libre Baskerville', sans-serif, serif;
+    font-feature-settings: "palt";
+}
+
+body {
+    color: #333;
+}
+
+a:link{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+
+
+
+/* utility
+------------------------------------- */
+.d-flex {
+    display: flex;
+}
+
+.f-sans {
+    font-family: 'Noto Sans JP';
+}
+
+.pc-non {
+    display: none;
+}
+/* layout
+--------------------------------- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.element {
+    /* 最初は非表示 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    transition: opacity 1s, visibility 1s, transform 1s;
+}
+
+/* フェードイン時に入るクラス */
+.is-fadein {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.flowing {
+	width: 0;
+	margin: 0;
+	
+	white-space: nowrap;
+	overflow: hidden;
+	animation: flowing-anim 5s forwards linear;
+}
+
+@keyframes flowing-anim {
+ 0%{
+     width: 0%;
+   }
+100%{
+     width: 100%;
+   }
+}
+
+/* header
+------------------------------------- */
+header {
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+}
+
+.page-header {
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    z-index: 9999;
+    display: flex;
+}
+
+.page-ttl {
+    font-size: 24px;
+    font-weight: normal;
+    margin-left: 20px;
+}
+
+.page-header a {
+    color:#fff;
+}
+
+.page-header a:hover {
+    color: #cccccc;
+    transition: .3s;
+}
+
+nav {
+    margin: 0 0 0 auto;
+}
+.nav-list li {
+    list-style-type: none;
+    font-size: 20px;
+    margin-right: 36px;
+}
+
+/* main visual
+------------------------------------------ */
+.main-visual{
+    position: relative;
+    width: 100%;
+}
+.slide {
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* mv 背景画像 */
+.one {
+    background-image: url(../images/main_photo.png);
+}
+.two {
+    background-image: url(../images/main_photo2.png);
+}
+.three {
+    background-image: url(../images/main_photo3.png);
+}
+
+.main-visual-text {
+    position: absolute;
+    bottom: 20%;
+    text-align: center;
+    width: 100%;
+    font-size: 1.2vw;
+    color: #fff;
+    z-index: 100;
+}
+
+/* about
+-------------------------------- */
+.about {
+    justify-content: space-between;
+    margin-top: 120px;
+}
+.about-img {
+    width: 50%;
+}
+
+.profile {
+    width: 100vw;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: 0;
+}
+/* PC用aboutのプロフィール画像 */
+.ichi {
+    background-image: url(../images/img.png);
+}
+.ni {
+    background-image: url(../images/img2.png);
+}
+.san {
+    background-image: url(../images/img3.png);
+}
+
+.about-info {
+    width: 50%;
+    margin: 50px 10px 0px 50px;
+}
+
+.about-ttl {
+    font-size: 60px;
+}
+
+.about-name {
+    font-size: 22px;
+    margin: 50px 0px 20px 0px;
+}
+
+.about-sns {
+    justify-content: start;
+    margin-top: 30px;
+}
+
+.history {
+    font-size: 16px;
+}
+
+.insta {
+    margin-right: 60px;
+}
+
+/* From uiverse.io by @alexmaracinaru */
+.cta {
+    border: none;
+    background: none;
+   }
+   
+   .cta span {
+    padding-bottom: 7px;
+    letter-spacing: 2px;
+    font-size: 14px;
+    padding-right: 15px;
+    /* text-transform: uppercase; */
+   }
+   
+   .cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+   }
+   
+   .cta:hover svg {
+    transform: translateX(0);
+   }
+   
+   .cta:active svg {
+    transform: scale(0.9);
+   }
+   
+   .hover-underline-animation {
+    position: relative;
+    color: #333333;
+    padding-bottom: 20px;
+   }
+   
+   .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+   }
+   
+   .cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+   }
+
+/* work 
+------------------------------------ */
+.work {
+    margin-top: 80px;
+}
+.work-ttl {
+    font-size: 60px;
+    text-align: center;
+}
+
+.works-ttl {
+    text-align: center;
+}
+
+.work-img {
+    width: 60%;
+    border-radius: 30px;
+    border: #cccccc 4px solid;
+    margin: 0 auto 30px auto;
+    max-height: 460px;
+}
+
+/* タイトルアンダーラインアニメーション ----------------------------- */
+.underLine-ttl {
+    position: relative;
+}
+
+.underLine-ttl::after {
+    position: absolute;
+    bottom: -4px;
+    left: 40%;
+    content: '';
+    width: 20%;
+    height: 2px;
+    background: #cccccc;
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: transform .3s;
+}
+
+.underLine-ttl:hover::after {
+    transform: scale(1, 1);
+}
+
+/* skill
+---------------------------------------- */
+.skill {
+    max-width: 900px;
+    margin: 80px auto;
+}
+
+.skill-ttl {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.skill-column1 {
+    padding-right: 40px;
+    width: 50%;
+}
+
+.skill-column2 {
+    width: 50%;
+    padding-left: 40px;
+    border-left: #cccccc 1px solid;
+}
+
+.skill-detail-ttl {
+    font-size: 16px;
+}
+
+
+.skill-detail-txt {
+    font-size: 14px;
+    border-top: #cccccc 1px solid;
+    margin-top: 5px;
+}
+
+.skill-logo {
+    text-align: center;
+    margin-right: 40px;
+}
+
+.skill-section {
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.icon::before {
+    font-family: "Font Awesome 5 Free"; /*←ココ！！！！！！！*/
+    font-weight: 400;
+    content: "\f007";
+  }
+
+i {
+    font-size: 60px;
+    color: #cccccc;
+}
+
+.fa-php {
+    position: relative;
+    left: -10px;
+}
+
+.skill-item-js {
+    position: relative;
+    left: -6px;
+}
+.skill-item-php {
+    position: relative;
+    left: -26px;
+}
+
+.skill-item-illustrator,
+.skill-item-photoshop {
+    position: relative;
+    left: -6px;
+}
+/* footer
+------------------------------------ */
+footer {
+    background-color: #333333;
+}
+
+.copy{
+    text-align: center;
+    padding: 15.75px 0 15.75px 0;
+    margin: 0;
+}
+
+.copy-text {
+    color: #fff;
+    font-size: .875rem;
+}
+

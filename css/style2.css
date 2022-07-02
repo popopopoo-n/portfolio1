@@ -1,0 +1,446 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    box-sizing: border-box;
+}
+
+/* typo
+------------------------------------- */
+
+html {
+    width: 100%;
+    font-size: 100%;
+    font-family: 'Libre Baskerville', sans-serif, serif;
+    font-feature-settings: "palt";
+}
+
+body {
+    color: #333;
+}
+
+a:link{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+
+.top {
+    overflow: hidden;
+}
+/* utility
+------------------------------------- */
+.d-flex {
+    display: flex;
+}
+
+.f-sans {
+    font-family: 'Noto Sans JP';
+}
+
+.sp-non {
+    display: none;
+}
+
+/* layout ----------------------
+--------------------------------------------- */
+.element {
+    /* 最初は非表示 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    transition: opacity 1s, visibility 1s, transform 1s;
+}
+
+/* フェードイン時に入るクラス */
+.is-fadein {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* header 
+---------------------------------------------------- */
+
+header {
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100vw;
+}
+
+.page-ttl {
+    margin: 10px;
+    text-align: center;
+}
+
+.page-ttl a {
+    color:#fff;
+    font-size: 20px;
+    position: relative;
+    top: -4px;
+}
+
+.page-ttl a:hover {
+    color: #cccccc;
+    transition: .3s;
+}
+
+/*　ハンバーガーボタン　*/
+.hamburger {
+    display : block;
+    position: fixed;
+    z-index : 3;
+    right : 13px;
+    top   : 12px;
+    width : 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.hamburger span {
+    display : block;
+    position: absolute;
+    width   : 30px;
+    height  : 2px ;
+    left    : 6px;
+    background : #fff;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition   : 0.3s ease-in-out;
+    transition        : 0.3s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+    top: 6px;
+}
+
+.hamburger span:nth-child(2) {
+    top: 16px;
+}
+
+.hamburger span:nth-child(3) {
+    top: 26px;
+}
+  
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+    top : 16px;
+    left: 6px;
+    background :#fff;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform   : rotate(-45deg);
+    transform        : rotate(-45deg);
+}
+  
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+    top: 16px;
+    background :#fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform   : rotate(45deg);
+    transform        : rotate(45deg);
+}
+  
+nav.globalMenuSp {
+    position: fixed;
+    z-index : 2;
+    top  : 0;
+    left : 0;
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity .6s ease, visibility .6s ease;
+    visibility: hidden;
+}
+  
+nav.globalMenuSp ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 100vw;
+    position: relative;
+    top: 60px;
+}
+  
+nav.globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100vw;
+    font-size: 20px;
+    transition: .4s all;
+}
+
+nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+}
+
+nav.globalMenuSp ul li:hover{
+    background :#ddd;
+}
+  
+nav.globalMenuSp ul li a {
+    display: block;
+    color: #fff;
+    padding: 1em 0;
+    text-decoration :none;
+}
+  
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+    opacity: 100;
+    visibility: visible;
+}
+
+.fa-instagram,
+.fa-youtube {
+    font-size: 40px;
+    color: #fff;
+}
+
+/* メインビジュアル----------------------------------------- */
+.main-visual{
+    position: relative;
+    width: 100%;
+}
+
+/* mv背景画像 */
+.one {
+    background-image: url(../images/portfolio.png);
+}
+.two {
+    background-image: url(../images/portfolio2.png);
+}
+.three {
+    background-image: url(../images/portfolio3.png);
+}
+
+.slide {
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.main-visual-text {
+    position: absolute;
+    bottom: 20%;
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+    color: #fff;
+    z-index: 100;
+}
+
+/* about -------------------------------------------------- */
+.about {
+    flex-wrap:wrap
+}
+
+.about-ttl {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px 0 20px 0;
+}
+
+.ichi {
+    background-image: url(../images/profile_img.png);
+}
+.ni {
+    background-image: url(../images/profile_img2.png);
+}
+.san {
+    background-image: url(../images/profile_img3.png);
+}
+
+.about-img {
+    width: 100%;
+}
+
+.profile {
+    width: 100vw;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: 0;
+}
+
+.about-name {
+    font-size: 24px;
+    margin: 20px 0px 8px 20px;
+}
+
+.history {
+    line-height: 180%;
+    margin: 10px;
+}
+
+/* SNS LINK btn ----------------------------------------------------- */
+.about-sns {
+    margin-top: 20px;
+    justify-content: space-around;
+}
+
+/* From uiverse.io by @alexmaracinaru */
+.cta {
+    border: none;
+    background: none;
+}
+   
+.cta span {
+    padding-bottom: 7px;
+    letter-spacing: 2px;
+    font-size: 14px;
+    padding-right: 15px;
+    /* text-transform: uppercase; */
+}
+   
+.cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+   
+.cta:hover svg {
+    transform: translateX(0);
+}
+   
+.cta:active svg {
+    transform: scale(0.9);
+}
+   
+.hover-underline-animation {
+    position: relative;
+    color: #333333;
+    padding-bottom: 20px;
+}
+   
+.hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+   
+.cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* work ------------------------------------------------------------ */
+.work {
+    width: 100%;
+}
+
+.work-ttl {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    padding: 60px 0 20px 0;
+}
+
+.work-img {
+    width: 90%;
+    border: #cccccc 2px solid;
+    border-radius: 30px;
+    margin: 0 auto 30px auto;
+}
+
+.work img {
+    text-align: center;
+}
+
+.skill {
+    width: 100%;
+}
+
+
+.skill-ttl {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    padding: 60px 0 20px 0;
+}
+
+.skill-detail {
+    flex-wrap: wrap;
+}
+
+.skill-section {
+    width: 100%;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.skill-detail-ttl {
+    font-size: 16px;
+}
+
+.skill-section i {
+    font-size: 60px;
+    color: #cccccc;
+}
+
+.skill-logo {
+    width: 20%;
+    text-align: center;
+    margin-right: 18px;
+}
+
+.skill-item {
+    width: 70%;
+}
+
+#progressbar1,
+#progressbar2,
+#progressbar3,
+#progressbar4,
+#progressbar5,
+#progressbar6 {
+    display: none;
+}
+
+.skill-detail-txt {
+    font-size: 14px;
+    margin-right: 10px;
+    border-top: #cccccc 1px solid;
+    margin-top: 5px;
+}
+
+/* footer
+------------------------------------ */
+footer {
+    background-color: #333333;
+}
+
+.copy{
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.copy-text {
+    color: #fff;
+    font-size: 12px;
+}

@@ -13,6 +13,7 @@ html {
     font-size: 100%;
     font-family: 'Libre Baskerville', sans-serif, serif;
     font-feature-settings: "palt";
+    background-color: #f5f5f5;
 }
 
 body {
@@ -42,7 +43,7 @@ a:active{
 }
 
 .f-sans {
-    font-family: 'Noto Sans JP';
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .sp-non {
@@ -226,14 +227,17 @@ nav.globalMenuSp.active {
 }
 
 .slide {
-    width: 100%;
     height: 100vh;
-    background-repeat: no-repeat;
+    /* max-width: 479px; */
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-repeat: repeat;
+    background-position: center center;
+    background-attachment: local;
 }
 
+.fade-slide {
+    max-width: 479px;
+}
 
 .main-visual-text {
     position: absolute;
@@ -370,6 +374,11 @@ nav.globalMenuSp.active {
     text-align: center;
 }
 
+.works-ttl {
+    text-align: center;
+    font-size: 15px;
+}
+
 .skill {
     width: 100%;
 }
@@ -412,14 +421,6 @@ nav.globalMenuSp.active {
     width: 70%;
 }
 
-#progressbar1,
-#progressbar2,
-#progressbar3,
-#progressbar4,
-#progressbar5,
-#progressbar6 {
-    display: none;
-}
 
 .skill-detail-txt {
     font-size: 14px;

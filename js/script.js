@@ -6,8 +6,10 @@ $(function () {
         infinite: true,
         dots: false,
         arrows: false,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 1000,
         speed: 2000,
+        pauseOnHover: false,
+        pauseOnFocus: false
     });
 
     $('.about-img').slick({
@@ -17,13 +19,16 @@ $(function () {
         infinite: true,
         dots: false,
         arrows: false,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 1000,
         speed: 2000,
+        pauseOnHover: false,
+        pauseOnFocus: false
     });
 
     $('.works').slick({
         dots: true,
         infinite: true,
+        autoplay: true,
         speed: 500,
         fade: true,
         swipe: true,
@@ -76,3 +81,22 @@ $(function () {
 });
 
 
+$(function () {
+  // スクロールしたら「トップに戻る」ボタンが表示される
+  const toTopButton = $(".js-to-top");
+  const scrollHeight = 600;
+  toTopButton.hide();
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 600) {
+      toTopButton.fadeIn();
+    } else {
+      toTopButton.fadeOut();
+    }
+  });
+
+  // 「トップに戻る」ボタンをクリックしたらスクロールで戻る
+  toTopButton.click(function () {
+    $("body,html").animate({ scrollTop: 0 }, 800);
+    return false;
+  });
+});

@@ -200,7 +200,7 @@ nav.globalMenuSp.active {
     margin-top: 100px;
     background-image: url(../images/img2top.png);
     background-size: cover;
-    height: 100px;
+    height: 130px;
 }
 
 /* ------------------------------------------ */
@@ -265,15 +265,26 @@ nav.globalMenuSp.active {
 
 
 .work-link {
+    flex-wrap: wrap;
     margin-top: 50px;
     justify-content: space-between;
     margin-bottom: 80px;
 }
 
+.site-link {
+    width: 100%;
+}
+
 .site-link a {
     color: #cccccc;
     margin-left: 20px;
-    font-size: 16px;
+    font-size: 15px;
+}
+
+.git-link {
+    width: 100%;
+    margin-left: 20px;
+    margin-top: 30px;
 }
 
 .git-link i {
@@ -290,6 +301,12 @@ nav.globalMenuSp.active {
 .git-link i:hover {
     color: #333333;
     transition: .7s;
+}
+
+@media screen and (max-width:345px) {
+    .none320 {
+        display: none;
+    }
 }
 
 /* footer

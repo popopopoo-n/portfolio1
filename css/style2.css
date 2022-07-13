@@ -368,6 +368,7 @@ nav.globalMenuSp.active {
     border: #cccccc 2px solid;
     border-radius: 30px;
     margin: 0 auto 30px auto;
+    max-height: 215px;
 }
 
 .work img {

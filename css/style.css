@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+/* PC stylesheet */
 /* reset */
 * {
     box-sizing: border-box;
@@ -293,8 +293,8 @@ nav {
 
 .work-img {
     width: 60%;
-    border-radius: 30px;
-    border: #cccccc 4px solid;
+    border-radius: 10px;
+    border: #cccccc 2px solid;
     margin: 0 auto 30px auto;
     max-height: 320px;
 }
